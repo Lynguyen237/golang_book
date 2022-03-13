@@ -11,7 +11,7 @@ import (
 func main() {
 
 	// print the name of the command itself
-	fmt.Println(os.Args[0])
+	fmt.Println("Name of command: ", os.Args[0])
 
 	// measure how long the same for loop takes once put in a separate function
 	// It's interesting that the for loop inside the main function takes longer when there's a function before it
@@ -45,9 +45,10 @@ func main() {
 	// a b c
 
 	// experiment with some other os methods
-	fmt.Println(os.Getuid())
-	fmt.Println(os.Geteuid())
+	fmt.Println("Getuid(): ", os.Getuid())
+	fmt.Println("Geteuid():", os.Geteuid())
 	fmt.Println(os.Getgroups())
+	fmt.Printf("%v, %v", os.Getgroups())
 	os.Exit(2)
 }
 
