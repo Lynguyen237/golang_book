@@ -51,3 +51,10 @@ func countLines(f *os.File, counts map[string]int) {
 // Run "go run dup2.go dup2textfile.txt dup2textfile2.txt" will print out these results in the terminal
 // 3	a
 // 2	b
+
+// Learning
+// A map is a reference to the data structure created by make.
+// When a map is passed to a function, the function receives a copy of the reference,
+// so any changes the called function makes to the underlying data structure will be
+// visible through the caller’s map reference too. In our example, the values inserted
+// into the counts map by countLines are seen by main.
