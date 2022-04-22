@@ -5,17 +5,17 @@ type SQSHandler interface {
 
 
 // implementation - details of the implementation should be transparent to consumers
-type CostaSQSHandler struct {
+type MessagingSQSHandler struct {
 	// dependencies - should be injected (i.e passed in) - allows for easier mocking/testing
 	messagingClient messaging.Client
 	emailClient email.IEmailClient
 }
 
 func (h *messagingSQSHandler) handle(msg interface{}) error {
-	// Do costa message parsing
+	// Do message parsing
 	json.ParseStuff(msg)
 
-	// Call costa API to get report details
+	// Call messaging API to get report details
 	h.messagingClient.GetReport(...)
 	
 	// Send email to issuer
